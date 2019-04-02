@@ -29,4 +29,13 @@ since we control the input, we can do this:
 
 we can input the following string : **|| cat /etc/natas_webpass/natas10 &&**
 
+## Note
+
+Never trust user input.
+
+More info on passthru function [here](https://www.php.net/manual/en/function.passthru.php)
+
+Make sure to use `escapeshellarg()` and `escapeshellcmd()` before you pass the command to passthru. 
+
+
 That's all! {Basic c0mand Injection}
