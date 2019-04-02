@@ -29,5 +29,18 @@ if(array_key_exists("submit", $_POST)) {
 ```
 
 so, basically, we need to satisfy this : encodeSecret(OUR_STRING) == encodedSecret;
+since all functions used to encode are reversible, we only have to reapply them in reverse order thats all.
+
+You can do it using a php interpreter **php -a**
+
+
+```php
+$encodedSecret = "3d3d516343746d4d6d6c315669563362";
+$pass = base64_decode(strrev(hex2bin(encodedSecret))); 
+echo $pass;
+```
+
+Now submit the password, and you will get the password for natas9
+
 
 
