@@ -21,3 +21,12 @@ if($key != "") {
 }
 ?>
 ```
+
+## What ca we exploit ?
+
+we can manipulate the input for the **`grep command`**, we know that the password for natas10 is in /etc/natas_webpass/natas10.  
+since we control the input, we can do this:
+
+we can input the following string : **|| cat /etc/natas_webpass/natas10 &&**
+
+That's all! {Basic c0mand Injection}
