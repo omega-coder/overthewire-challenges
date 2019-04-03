@@ -72,7 +72,28 @@ if($data["showpassword"] == "yes") {
 
 
 ---------------------
-We will first recover the xor key.
+We will first recover the xor key. We have the base64 encoded cipher and we also have what was originally XORed with the key to get the cipher.
+
+We can recover the key first.
+
+```python
+from base64 import b64decode, b64encode
+b64_encoded = "ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV56QUcIaAw="
+original = '{"showpassword":"no","bgcolor":"#ffffff"}' # this is the result on using php's json_encode(array) on the original array in source code 
+
+key_ = ""
+
+for i, j in zip(original.encode(), b64decode(b64_encoded)):
+    key_ += chr(i ^ j)
+
+print(key_)
+# key_ = qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8..
+# which means key = qw8J
+```
+
+
+
+
 
 
 
