@@ -56,7 +56,7 @@ saveData($data);
 
 ?>
 
-Source Code #2
+#### Source Code #2
 
 ```php
 
@@ -65,12 +65,6 @@ if($data["showpassword"] == "yes") {
         print "The password for natas12 is <censored><br>";
     }
 ?>
-```
-
-
-
-
-
 ```
 
 - **we dont know the xor key**
