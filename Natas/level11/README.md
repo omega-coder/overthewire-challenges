@@ -92,8 +92,24 @@ print(key_)
 ```
 
 
+#### Let's get the password!
 
+we will xor_encrypt() our own cookie to get the password
 
+we need to encrypt this : **{"showpassword":"yes","bgcolor":"#ffffff"}**, since we need showpassword to be equal to yes!
+
+```python
+from base64 import b64encode
+c = '{"showpassword":"yes","bgcolor":"#ffffff"}'
+key = "qw8J"
+
+res = ""
+for i in range(len(c)):
+    res += chr(ord(c[i]) ^ ord(key[i % 4])) # 4 = len(key)
+
+print(b64encode(key.encode()))
+
+```
 
 
 
