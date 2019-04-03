@@ -36,6 +36,22 @@ if(array_key_exists("username", $_REQUEST)) {
 ?> 
 ```
 
+We can see that both the username and password are injectable.  
+Let's try to play a little with the query.  
+
+let's enter test as the `username` and test as `password`, then the query will look like this : 
+
+```sql
+SELECT * from users where username="test" and password="test"
+```
+
+
+
+
+
+
+
+
 
 
 
