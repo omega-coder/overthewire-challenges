@@ -55,7 +55,7 @@ if(array_key_exists("bgcolor",$_REQUEST)) {
 saveData($data);
 
 ?>
-
+```
 #### Source Code #2
 
 ```php
@@ -68,7 +68,7 @@ if($data["showpassword"] == "yes") {
 ```
 
 - **we dont know the xor key**
-- ** we need to change setpassword to yes**
+- **we need to change setpassword to yes**
 
 
 ---------------------
