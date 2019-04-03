@@ -107,9 +107,14 @@ res = ""
 for i in range(len(c)):
     res += chr(ord(c[i]) ^ ord(key[i % 4])) # 4 = len(key)
 
-print(b64encode(key.encode()))
+print(b64encode(res.encode()))
+
 
 ```
+
+#### Let's request the page with our new cookie :D
+
+requesting the page with our new crafted cookie gives the password for natas12
 
 
 
