@@ -45,6 +45,31 @@ let's enter test as the `username` and test as `password`, then the query will l
 SELECT * from users where username="test" and password="test"
 ```
 
+Now let's try :
+- **username:"test**
+- **password:"test**
+
+Then our query would look like this:
+
+```sql
+SELECT * from users where username=""test" and password=""test"   
+```
+
+Now we can do this : username = **" or 1=1#**, this will be equivalent to
+
+```sql
+SELECT * FROM users where 1
+```
+
+`NOTE: # is used for commenting is SQL.`
+
+We can use the payload `" or 1=1#` in both username or password, they are both injectable.
+
+This challenge is a simple Authentification Bypass.
+
+
+
+
 
 
 
