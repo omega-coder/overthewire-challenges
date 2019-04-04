@@ -116,6 +116,10 @@ for i in range(1, 32+1):
 
 ```
 
+We could have achieved the same work by using **LIKE BINARY**
+
+Thanks for reading!
+
 
 
 
