@@ -8,7 +8,7 @@ import requests
 URL = "http://natas19.natas.labs.overthewire.org"
 cookies = {'PHPSESSID': ''}
 session = requests.Session()
-
+session.auth = ('natas19', '4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs')
 
 
 
