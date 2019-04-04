@@ -4,6 +4,7 @@
 
 
 import requests
+import re
 
 URL = "http://natas19.natas.labs.overthewire.org"
 cookies = {'PHPSESSID': ''}
