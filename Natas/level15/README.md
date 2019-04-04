@@ -57,7 +57,22 @@ I have already explained injection method in the previous writeup.
 ```sql
 natas16" and length(password) = 32#
 ```
+if the output is "This user exists.", then password length is indeed 32, else it is not (I know it is 32 )
 
+To retrieve the password, we can use `LIKE` or `strcmp()` function of MySql.
+
+Let's try something.
+
+username: **natas16" and strcmp(BINARY substr(password, 1, 1), "W") = 0#**
+
+If after the previous injection we get the output saying `This user exists.`, then we know that the first character of the password is indeed `W`.
+
+- substr(password, 1, 1) gets the first character of the password column.
+- strcmp(str1, str2) compares the strings `str1` and `str2`, returns the distance between the two operands.
+- **BINARY** is used for case-sensitivity.
+
+
+### Exploitation
 
 
 
