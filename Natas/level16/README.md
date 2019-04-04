@@ -49,7 +49,7 @@ If you send the string `omega` as the needle parameter value, you will get two r
 now if you set the needle parameter to : **omega$(grep ^o /etc/natas_webpass/natas17)**, you will also get the string `omega` in the output!!!!
 So i wrote a small python script to test this with all characters.
 
-![python_test](https://res.cloudinary.com/https-omega-coder-github-io/image/upload/v1554351612/Screenshot_2019-04-04_06-19-35.png)
+![python_test](https://res.cloudinary.com/https-omega-coder-github-io/image/upload/v1554352114/Screenshot_2019-04-04_06-28-20.png)
 
 all characters (letters and digits) returned the same output except for the character 8, so let's suppose that the password starts with an 8.
 
