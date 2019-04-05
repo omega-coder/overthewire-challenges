@@ -18,5 +18,6 @@ for i in range(1, 641):
         m = re.search(r'Password: [A-Za-z0-9]+', res.text)
         if m:
             print(m.group(0))
+            break
 
 
